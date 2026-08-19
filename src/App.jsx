@@ -9,6 +9,7 @@ function App() {
         "A full-stack management dashboard for a Service provider with JWT authentication, protected routes, and real-time status updates.",
       tech: ["React", "Node.js", "MongoDB", "Tailwind"],
       videoPlaceholder: "30s DaVinci Resolve Demo",
+      link: "https://service-provider-onboarding-portal-one.vercel.app/",
     },
     {
       title: "IPL Mock Auction",
@@ -16,6 +17,7 @@ function App() {
         "A multiplayer draft simulation featuring dynamic room code generation, real-time budget deductions, and complex state management.",
       tech: ["MERN Stack", "REST APIs", "React"],
       videoPlaceholder: "Room Code & Draft Demo",
+      link: "https://project-c-inky.vercel.app/",
     },
     {
       title: "Dataweave: AI Data scraping tool",
@@ -23,8 +25,10 @@ function App() {
         "A responsive, high-performance frontend interface designed for streamlined patient data access and medical record management.",
       tech: ["React", "Vite", "UI/UX Design"],
       videoPlaceholder: "UI Walkthrough Demo",
+      link: "https://youtu.be/Bw6k3jHNo08",
     },
   ];
+
   return (
     <div className="min-h-screen bg-[#fbfbfd] text-[#1d1d1f] font-sans selection:bg-blue-200">
       {/* ULTRA-CLEAN NAVBAR */}
@@ -120,39 +124,46 @@ function App() {
         {/* The Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div
+            <a
               key={index}
-              className="group bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-2 flex flex-col h-full"
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block h-full"
             >
-              {/* Video Placeholder (Cinematic rounded container) */}
-              <div className="w-full h-48 bg-gray-50 rounded-2xl mb-6 flex items-center justify-center overflow-hidden relative border border-gray-100">
-                <span className="text-gray-400 font-semibold text-sm tracking-wide">
-                  [{project.videoPlaceholder}]
-                </span>
-                {/* Overlay gradient for a subtle Apple sheen on hover */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-
-              {/* Text Content */}
-              <h3 className="text-2xl font-bold text-[#1d1d1f] mb-2 tracking-tight">
-                {project.title}
-              </h3>
-              <p className="text-[#86868b] text-sm leading-relaxed mb-6 flex-grow">
-                {project.description}
-              </p>
-
-              {/* Tech Stack Tags */}
-              <div className="flex flex-wrap gap-2 mt-auto">
-                {project.tech.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 bg-[#fbfbfd] text-[#1d1d1f] text-xs font-bold rounded-full border border-gray-200"
-                  >
-                    {tag}
+              <div className="group bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-2 flex flex-col h-full cursor-pointer">
+                {/* Video Placeholder */}
+                <div className="w-full h-48 bg-gray-50 rounded-2xl mb-6 flex items-center justify-center overflow-hidden relative border border-gray-100">
+                  <span className="text-gray-400 font-semibold text-sm tracking-wide">
+                    [{project.videoPlaceholder}]
                   </span>
-                ))}
+
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+
+                {/* Text Content */}
+                <h3 className="text-2xl font-bold text-[#1d1d1f] mb-2 tracking-tight">
+                  {project.title}
+                </h3>
+
+                <p className="text-[#86868b] text-sm leading-relaxed mb-6 flex-grow">
+                  {project.description}
+                </p>
+
+                {/* Tech Stack Tags */}
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.tech.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 bg-[#fbfbfd] text-[#1d1d1f] text-xs font-bold rounded-full border border-gray-200"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>
