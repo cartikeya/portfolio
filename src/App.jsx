@@ -7,25 +7,31 @@ function App() {
       title: "Service Provider Onboarding Portal",
       description:
         "A full-stack management dashboard for a Service provider with JWT authentication, protected routes, and real-time status updates.",
-      tech: ["React", "Node.js", "MongoDB", "Tailwind"],
+      tech: ["React", "Node.js", "MongoDB", "TailwindCSS"],
       videoPlaceholder: "30s DaVinci Resolve Demo",
+      image: "https://ik.imagekit.io/i4gppjvh4/SCR-20260825-sceg.png",
       link: "https://service-provider-onboarding-portal-one.vercel.app/",
+      github: "https://github.com/cartikeya/service-provider-onboarding-portal",
     },
     {
       title: "IPL Mock Auction",
       description:
         "A multiplayer draft simulation featuring dynamic room code generation, real-time budget deductions, and complex state management.",
-      tech: ["MERN Stack", "REST APIs", "React"],
+      tech: ["MongoDB", "ReactJS", "ExpressJS", "NodeJS", "REST APIs"],
       videoPlaceholder: "Room Code & Draft Demo",
+      image: "https://ik.imagekit.io/i4gppjvh4/SCR-20260827-pfwz-2.png",
       link: "https://project-c-inky.vercel.app/",
+      github: "https://github.com/cartikeya/project-c",
     },
     {
       title: "Dataweave: AI Data scraping tool",
       description:
         "A responsive, high-performance frontend interface designed for streamlined patient data access and medical record management.",
-      tech: ["React", "Vite", "UI/UX Design"],
+      tech: ["VannilaJS", "Python", "TailwindCSS", "Groq LLM"],
       videoPlaceholder: "UI Walkthrough Demo",
+      image: "https://ik.imagekit.io/i4gppjvh4/SCR-20250519-mxxp.png",
       link: "https://youtu.be/Bw6k3jHNo08",
+      github: "https://github.com/cartikeya/Data-weaver-HackHazard",
     },
   ];
 
@@ -134,9 +140,14 @@ function App() {
               <div className="group bg-white rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-2 flex flex-col h-full cursor-pointer">
                 {/* Video Placeholder */}
                 <div className="w-full h-48 bg-gray-50 rounded-2xl mb-6 flex items-center justify-center overflow-hidden relative border border-gray-100">
-                  <span className="text-gray-400 font-semibold text-sm tracking-wide">
+                  {/* <span className="text-gray-400 font-semibold text-sm tracking-wide">
                     [{project.videoPlaceholder}]
-                  </span>
+                  </span> */}
+                  <img
+                    src={project.image}
+                    alt={`${project.title} preview`}
+                    className="w-full h-48 object-cover rounded-md"
+                  />
 
                   {/* Overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -161,6 +172,38 @@ function App() {
                       {tag}
                     </span>
                   ))}
+                </div>
+                {/* Buttons Container */}
+                <div className="flex gap-3 mt-auto pt-2">
+                  {/* Live Link Button */}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-blue-600 text-white rounded-4xl hover:bg-blue-700 transition flex-1 text-center border border-gray-200"
+                  >
+                    Live Demo
+                  </a>
+
+                  {/* GitHub Button */}
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-gray-800 text-white rounded-4xl hover:bg-gray-900 transition flex-1 text-center flex items-center justify-center gap-2"
+                  >
+                    {/* Optional: Simple SVG GitHub Icon */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                    GitHub
+                  </a>
                 </div>
               </div>
             </a>
@@ -202,10 +245,9 @@ function App() {
             </div>
 
             <p className="text-[#86868b] text-lg leading-relaxed font-medium">
-              I am a 3rd-year B.Tech student building scalable software. When I
-              am not writing React architecture or configuring MERN stack
-              backends, I am actively planning my next adventure to travel the
-              world full-time.
+              Hi, I'm cartikeyalavu. I am a final-year B.Tech student building
+              scalable software, specializing in React architecture, REST API
+              integration, and robust MERN stack backends.
             </p>
           </div>
 
